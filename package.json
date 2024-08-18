@@ -6,6 +6,7 @@
   "scripts": {
     "start": "tsc && node ./dist/index.js",
     "test": "tsc && env-cmd -f ./config/test.env mocha --exit",
+    "try": "tsc && env-cmd -f ./config/production.env node dist/index.js",
     "dev": "tsc-watch --onSuccess \"env-cmd -f ./config/production.env node dist/index.js\"",
     "coverage": "c8 npm test && c8 report --reporter=lcov",
     "doc": "typedoc",
