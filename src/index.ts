@@ -2,6 +2,8 @@ import express from 'express';
 import chalk from 'chalk';
 import { connect } from 'mongoose';
 
+import { usersRouter } from './routers/users.js';
+
 /**
  * Function to start the database connection
  * @returns void
@@ -18,6 +20,7 @@ function startDB() : void {
 // Initialize the express server
 export const app = express();
 app.use(express.json());
+app.use(usersRouter);
 console.log(chalk.green('[Server_start] Server started!'));
 app.listen(3000);
 startDB();
